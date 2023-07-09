@@ -13,7 +13,7 @@
         <a href="/checkbox.html">checkbox</a>
         <a href="/checkbox_autocomplete_off.html">checkbox_autocomplete_off</a>
     </div>
-    <form class="account-hub__list">
+    <form class="account-hub__list" id="formId">
       <div class="account-hub__card member-card member-card-select">
         <div class="member-card__select">
           <label for="fred.mann@email.com" class="chb"
@@ -163,5 +163,8 @@
         </div>
       </div>
     </form>
+    <script>
+        document.getElementById('formId').reset();
+    </script>
   </body>
 </html>
