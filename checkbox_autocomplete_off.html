@@ -160,11 +160,13 @@
       </div>
     </form>
     <script>
-        document.getElementById('formId').reset();
-        window.onpageshow = function(event) {
-            if (event.persisted) {
-                document.getElementById('formId').reset();
-            }
+        function resetPageForms() {
+            const forms = document.getElementsByTagName('form');
+            Array.from(forms).forEach(form => form.reset());
+        }
+
+        window.onpageshow = function() {
+            resetPageForms();
         };
     </script>
   </body>
