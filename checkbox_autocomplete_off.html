@@ -161,6 +161,11 @@
     </form>
     <script>
         document.getElementById('formId').reset();
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                document.getElementById('formId').reset();
+            }
+        };
     </script>
   </body>
 </html>
