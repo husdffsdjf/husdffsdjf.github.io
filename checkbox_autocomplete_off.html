@@ -166,9 +166,7 @@
     </form>
     <script>
       $(window).on("beforeunload", function () {
-        $('.account-hub__list input[type="checkbox"]')
-          .filter(":checked")
-          .prop("checked", false)
+        $('form').trigger('reset');
       });
     </script>
     <!-- <script>
