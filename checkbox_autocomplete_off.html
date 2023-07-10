@@ -4,14 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>checkbox</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.slim.min.js"
+      integrity="sha256-tG5mcZUtJsZvyKAxYLVXrmjKBVLd6VpVccqz/r4ypFE="
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
     <div>
-        <a href="/">main</a>
-        <a href="/checkbox.html">checkbox</a>
-        <a href="/checkbox_autocomplete_off.html">checkbox_autocomplete_off</a>
+      <a href="/">main</a>
+      <a href="/checkbox.html">checkbox</a>
+      <a href="/checkbox_autocomplete_off.html">checkbox_autocomplete_off</a>
     </div>
     <form class="account-hub__list" id="formId">
       <div class="account-hub__card member-card member-card-select">
@@ -160,6 +165,13 @@
       </div>
     </form>
     <script>
+      $(window).on("beforeunload", function () {
+        $('.account-hub__list input[type="checkbox"]')
+          .filter(":checked")
+          .prop("checked", false)
+      });
+    </script>
+    <!-- <script>
         function resetPageForms() {
             const forms = document.getElementsByTagName('form');
             Array.from(forms).forEach(form => form.reset());
@@ -168,6 +180,6 @@
         window.onpageshow = function() {
             resetPageForms();
         };
-    </script>
+    </script> -->
   </body>
 </html>
